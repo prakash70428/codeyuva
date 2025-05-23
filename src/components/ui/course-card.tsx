@@ -1,4 +1,6 @@
+
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Course } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,18 +13,22 @@ interface CourseCardProps {
 export function CourseCard({ course }: CourseCardProps) {
   return (
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-1 group bg-card border-border hover:border-primary/50">
-      <div className="relative w-full h-48">
-        <Image
-          src={course.image}
-          alt={course.title}
-          layout="fill"
-          objectFit="cover"
-          className="transition-transform duration-500 group-hover:scale-105"
-          data-ai-hint={course.dataAiHint}
-        />
-      </div>
+      <Link href={`/courses/${course.id}`} className="block">
+        <div className="relative w-full h-48">
+          <Image
+            src={course.image}
+            alt={course.title}
+            layout="fill"
+            objectFit="cover"
+            className="transition-transform duration-500 group-hover:scale-105"
+            data-ai-hint={course.dataAiHint}
+          />
+        </div>
+      </Link>
       <CardHeader>
-        <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">{course.title}</CardTitle>
+        <Link href={`/courses/${course.id}`} className="block">
+          <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">{course.title}</CardTitle>
+        </Link>
         <CardDescription className="text-sm text-muted-foreground h-12 overflow-hidden">
           {course.description}
         </CardDescription>
@@ -42,7 +48,11 @@ export function CourseCard({ course }: CourseCardProps) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full shadow-md hover:shadow-lg transition-shadow">Enroll Now</Button>
+        <Button asChild className="w-full shadow-md hover:shadow-lg transition-shadow">
+          <Link href={`/courses/${course.id}`}>
+            View Details & Enroll
+          </Link>
+        </Button>
       </CardFooter>
     </Card>
   );
