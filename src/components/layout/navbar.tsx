@@ -77,9 +77,11 @@ export function Navbar() {
           </Sheet>
         </div>
       </div>
-      {isScrolled && (
-        <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-gray-200/20 via-gray-200/10 to-transparent pointer-events-none" />
-      )}
+      <div
+        className={`absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-gray-200/20 via-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ease-in-out ${
+          isScrolled ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
     </header>
   );
 }
