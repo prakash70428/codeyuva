@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import type { Course } from '@/types';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle as CardTitleComponent } from '@/components/ui/card'; // Renamed CardTitle to avoid conflict
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogFooter, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { CalendarDays, Users, ListChecks, CheckCircle } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
@@ -31,7 +31,7 @@ export function CourseCard({ course }: CourseCardProps) {
         </div>
         <CardHeader>
           <DialogTrigger asChild>
-            <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors cursor-pointer">{course.title}</CardTitle>
+            <CardTitleComponent className="text-xl font-semibold group-hover:text-primary transition-colors cursor-pointer">{course.title}</CardTitleComponent>
           </DialogTrigger>
           <CardDescription className="text-sm text-muted-foreground h-12 overflow-hidden">
             {course.description}
@@ -71,10 +71,12 @@ export function CourseCard({ course }: CourseCardProps) {
             data-ai-hint={course.dataAiHint || 'course education'}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 p-4 md:p-6">
-            {/* DialogTitle is typically text, h1 might be better for semantics here if not using DialogHeader's title */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white shadow-lg">{course.title}</h1>
-          </div>
+           {/* Use DialogHeader and DialogTitle for accessibility, maintaining visual style */}
+          <DialogHeader className="absolute bottom-0 left-0 p-4 md:p-6 !space-y-0 bg-transparent w-full">
+            <DialogTitle className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white shadow-lg !m-0 !p-0 text-left">
+                {course.title}
+            </DialogTitle>
+          </DialogHeader>
         </div>
         
         <div className="p-6 md:p-8 space-y-6">
@@ -124,8 +126,8 @@ export function CourseCard({ course }: CourseCardProps) {
               </p>
           </div>
         </div>
-        {/* No explicit DialogFooter needed if close button is handled by X icon from DialogContent */}
       </DialogContent>
     </Dialog>
   );
 }
+
