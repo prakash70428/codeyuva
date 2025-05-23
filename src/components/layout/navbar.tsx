@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -23,7 +24,7 @@ export function Navbar() {
     <header 
       className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${
         isScrolled ? 'bg-background/80 backdrop-blur-md shadow-lg border-b border-border/50' : 'bg-transparent border-b border-transparent'
-      }`}
+      } relative`} // Added relative for positioning the gradient
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <AnimatedLogo />
@@ -76,6 +77,9 @@ export function Navbar() {
           </Sheet>
         </div>
       </div>
+      {isScrolled && (
+        <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-gray-200/20 via-gray-200/10 to-transparent pointer-events-none" />
+      )}
     </header>
   );
 }
