@@ -1,4 +1,10 @@
 
+// This file is no longer needed as course details are shown in a dialog.
+// You can safely delete this file from your project.
+// To ensure a clean state if this file is not automatically removed by the system,
+// we are replacing its content with this comment.
+
+/*
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -31,7 +37,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
         title: course.title,
         description: course.description,
         images: [course.image],
-        type: 'article', // Using 'article' type as it's a detailed content page
+        type: 'article', 
     },
     twitter: {
         card: 'summary_large_image',
@@ -115,7 +121,6 @@ export default function CoursePage({ params }: CoursePageProps) {
                     {course.syllabusOverview.map((item, index) => (
                       <li key={index} className="p-4 bg-muted/50 rounded-md shadow-sm">
                         <p className="font-medium text-foreground">{item}</p>
-                        {/* Future: Could add more detail per syllabus item here */}
                       </li>
                     ))}
                   </ul>
@@ -135,7 +140,6 @@ export default function CoursePage({ params }: CoursePageProps) {
               </CardContent>
             </Card>
 
-            {/* Example of an alert - could be used for prerequisites or important notes */}
             <Card className="mt-8 bg-card border-primary/30">
                 <CardHeader className="flex flex-row items-center space-x-3">
                     <AlertTriangle className="w-6 h-6 text-primary" />
@@ -155,4 +159,4 @@ export default function CoursePage({ params }: CoursePageProps) {
     </div>
   );
 }
-
+*/
