@@ -19,7 +19,7 @@ export function HeroSection() {
             <Button size="lg" asChild className="shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
               <Link href="#courses-section">Get Started Today</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="hover:bg-primary/10 transition-all duration-300 transform hover:scale-105">
+            <Button size="lg" variant="outline" asChild className="hover:bg-primary/50 hover:text-white transition-all duration-300 transform hover:scale-105">
               <Link href="/blog">Explore Blog</Link>
             </Button>
           </div>
