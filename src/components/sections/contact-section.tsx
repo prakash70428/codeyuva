@@ -81,8 +81,8 @@ export function ContactSection() {
                 <Input id="name" name="name" type="text" placeholder="John Doe" required className="mt-1 bg-input" />
               </div>
               <div>
-                <Label htmlFor="email" className="text-sm font-medium">Email Address</Label>
-                <Input id="email" name="email" type="email" placeholder="you@example.com" required className="mt-1 bg-input" />
+                <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
+                <Input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required className="mt-1 bg-input" />
               </div>
               <div>
                 <Label htmlFor="message" className="text-sm font-medium">Message</Label>
@@ -110,15 +110,15 @@ export function ContactSection() {
             <CardContent className="space-y-4">
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-primary" />
-                <a href="mailto:info@codeyuva.com" className="text-muted-foreground hover:text-primary">info@codeyuva.com</a>
+                <a href="mailto:codeyuva2025@gmail.com" className="text-muted-foreground hover:text-primary">codeyuva2025@gmail.com</a>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-primary" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">+1 (234) 567-890</a>
+                <a href="tel:+917042871532" className="text-muted-foreground hover:text-primary">+917042871532</a>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-1 text-primary shrink-0" />
-                <span className="text-muted-foreground">123 Code Street, Tech City, TC 54321</span>
+                <span className="text-muted-foreground">House no. 17-A/A, Block-A, Dwarka mor Patel Garden, New Delhi</span>
               </div>
             </CardContent>
           </Card>
@@ -128,8 +128,8 @@ export function ContactSection() {
             </CardHeader>
             <CardContent className="space-y-2 text-muted-foreground">
               <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-              <p>Saturday: 10:00 AM - 2:00 PM</p>
-              <p>Sunday: Closed</p>
+              <p>Saturday: 10:00 AM - 3:00 PM</p>
+              <p>Sunday: 10:00 AM - 3:00 PM</p>
             </CardContent>
           </Card>
         </div>

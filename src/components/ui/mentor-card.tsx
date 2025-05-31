@@ -12,21 +12,22 @@ interface MentorCardProps {
 export function MentorCard({ mentor }: MentorCardProps) {
   return (
     <div className="perspective group">
-      <Card className="relative preserve-3d w-full h-[380px] shadow-lg transition-all duration-700 group-hover:rotate-y-180 bg-card border-border hover:border-primary/50">
+      <Card className="relative preserve-3d max-w-sm h-[380px] ml-10 shadow-lg transition-all duration-700 group-hover:rotate-y-180 bg-card border-border hover:border-primary/50">
         {/* Front of the card */}
         <div className="absolute backface-hidden w-full h-full flex flex-col items-center justify-center p-6 text-center">
-          <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-primary shadow-md">
+          <div className="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-2 border-primary shadow-md">
             <Image
               src={mentor.photo}
               alt={mentor.name}
-              layout="fill"
-              objectFit="cover"
+              fill // Replaces layout="fill"
+              className='object-contain'
               data-ai-hint={mentor.dataAiHint}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
           <CardTitle className="text-xl font-semibold">{mentor.name}</CardTitle>
-          <CardDescription className="text-sm text-primary mt-1 flex items-center justify-center">
-            <Briefcase className="w-4 h-4 mr-1.5" />
+          <CardDescription className="text-sm text-primary mt-1 flex items-start justify-center">
+            <Briefcase className="w-4 h-4 mt-1 mr-1.5" />
             {mentor.experience.split('|')[0].trim()}
           </CardDescription>
            <p className="text-xs text-muted-foreground mt-2 italic">Hover for details</p>
@@ -48,7 +49,7 @@ export function MentorCard({ mentor }: MentorCardProps) {
             </CardContent>
           </div>
           <CardFooter className="p-0 mt-4">
-            <Button asChild variant="outline" className="w-full hover:bg-primary/10 border-primary text-primary">
+            <Button asChild variant="outline" className="w-full hover:bg-primary/10 hover:text-white border-primary text-primary">
               <Link href={mentor.linkedinUrl} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-4 h-4 mr-2" /> Connect on LinkedIn
               </Link>

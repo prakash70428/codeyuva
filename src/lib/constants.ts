@@ -1,10 +1,11 @@
-import type { NavItem, Course, Mentor, Article } from '@/types';
+import type { NavItem, Course, Mentor, Article, Testimonial } from '@/types';
 
 export const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Courses', href: '#courses-section' },
   { label: 'Mentors', href: '#mentors-section' },
-  { label: 'Blog', href: '/blog' },
+  // { label: 'Blog', href: '/blog' }, // Removed Blog link
+  { label: 'Testimonials', href: '#testimonials-section' }, // Added Testimonials link
   { label: 'Contact', href: '#contact-section' },
 ];
 
@@ -16,9 +17,9 @@ export const FOOTER_LINKS: NavItem[] = [
 ];
 
 export const SOCIAL_LINKS: NavItem[] = [
-  { label: 'Facebook', href: '#', external: true },
-  { label: 'Twitter', href: '#', external: true },
-  { label: 'Instagram', href: '#', external: true },
+  { label: 'Facebook', href: 'https://www.facebook.com/people/Code-Yuva/61576738535747/', external: true },
+  // { label: 'Twitter', href: '#', external: true },
+  { label: 'Instagram', href: 'https://www.instagram.com/code.yuva?igsh=MXZhcTgwMGhpeTl6Nw==', external: true },
   { label: 'LinkedIn', href: '#', external: true },
 ];
 
@@ -26,32 +27,32 @@ export const SOCIAL_LINKS: NavItem[] = [
 export const PLACEHOLDER_COURSES: Course[] = [
   {
     id: 'dsa-mastery',
-    title: 'DSA Mastery Bootcamp',
+    title: 'Master Data Structure and Algorithms in Java',
     description: 'Conquer data structures and algorithms with hands-on projects and expert guidance.',
-    syllabusOverview: ['Arrays & Strings', 'Linked Lists', 'Trees & Graphs', 'Dynamic Programming', 'Sorting & Searching'],
-    duration: '12 Weeks',
+    syllabusOverview: ['Basics of Programming', 'Functions & Arrays', 'String,String Builder & Array List', 'Recursion & Backtracking', 'Sorting & Searching','Time & Space Complexity','Dynamic Programming & OOPs','Stack,Queue&Linked List','Tree & BST','Hashmap & Heap','Graph & Bitmasking'],
+    duration: '4/6 Months Course',
     whoShouldJoin: ['Aspiring Software Engineers', 'Students preparing for interviews', 'Developers seeking to strengthen fundamentals'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/dsapicture.png',
     dataAiHint: 'coding data',
   },
   {
     id: 'fullstack-pro',
-    title: 'Full-Stack Web Development Pro',
+    title: 'Master Full Stack Web Development with node.js(MERN)',
     description: 'Become a full-stack developer by mastering frontend and backend technologies.',
-    syllabusOverview: ['HTML, CSS, JavaScript', 'React & Next.js', 'Node.js & Express', 'Databases (SQL/NoSQL)', 'Deployment & DevOps'],
-    duration: '16 Weeks',
+    syllabusOverview: ['Master HTML5', 'CSS & Tailwind', 'JavaScript ES6+', 'React.js','Git & GitHub', 'Node.js & Express.js', 'MongoDB','REST APIs', 'Live Project Deployment'],
+    duration: '4/6 Months Course',
     whoShouldJoin: ['Beginners in web development', 'Designers wanting to code', 'Entrepreneurs building web apps'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/mernPicture.webp',
     dataAiHint: 'web development',
   },
   {
     id: 'ml-foundations',
-    title: 'Machine Learning Foundations',
+    title: 'Master Machine Learning',
     description: 'Dive into the world of AI and Machine Learning with practical examples and projects.',
     syllabusOverview: ['Python for ML', 'Supervised Learning', 'Unsupervised Learning', 'Neural Networks Basics', 'Model Evaluation'],
-    duration: '10 Weeks',
+    duration: '4/6 Months Course',
     whoShouldJoin: ['Data Science Enthusiasts', 'Analysts looking to upskill', 'Engineers curious about AI'],
-    image: 'https://placehold.co/600x400.png',
+    image: '/images/mlpicture.webp',
     dataAiHint: 'machine learning',
   },
 ];
@@ -59,36 +60,36 @@ export const PLACEHOLDER_COURSES: Course[] = [
 export const PLACEHOLDER_MENTORS: Mentor[] = [
   {
     id: 'mentor-1',
-    name: 'Aisha Khan',
-    experience: 'Senior Software Engineer @ Google | 8+ Years in DSA & System Design',
-    photo: 'https://placehold.co/300x300.png',
+    name: 'Prakash Kumar Prasad',
+    experience: 'Ex-Product Engineer and Java Mentor @ Coding Blocks | NSUT Delhi Alumnus | 5+ Years experience in teaching | passionate about simplifying complex tech concepts for students',
+    photo: '/images/PrakashKr.png',
     dataAiHint: 'woman portrait',
-    linkedinUrl: 'https://linkedin.com/in/aishakhan',
+    linkedinUrl: 'https://www.linkedin.com/in/prakash-kumar-464a63169/',
   },
   {
     id: 'mentor-2',
-    name: 'Raj Patel',
-    experience: 'Lead Full-Stack Developer @ Microsoft | 10+ Years in Web Technologies',
-    photo: 'https://placehold.co/300x300.png',
+    name: 'Pawan kumar',
+    experience: 'Software Development Engineer, SDE-II @ Amazon | NSUT Delhi Alumnus | 6+ Years in Industry Experience | Built Real-Time Systems for Millions of Users',
+    photo: '/images/PawanSir.png',
     dataAiHint: 'man portrait',
-    linkedinUrl: 'https://linkedin.com/in/rajpatel',
+    linkedinUrl: 'https://www.linkedin.com/in/pawan-kumar-375b53141/',
   },
   {
     id: 'mentor-3',
-    name: 'Priya Sharma',
-    experience: 'Machine Learning Scientist @ Amazon | 6+ Years in AI & Data Science',
-    photo: 'https://placehold.co/300x300.png',
+    name: 'Harsh Sharma',
+    experience: 'Ph.D. doctoral candidate MARS Lab @ Washington State University Pullman | Published 4+ international research papers in the field of AI/ML | Strong academic foundation with global exposure and deep subject expertise ',
+    photo: '/images/harsh.jpg',
     dataAiHint: 'woman software',
-    linkedinUrl: 'https://linkedin.com/in/priyasharma',
+    linkedinUrl: 'https://www.linkedin.com/in/harshari/',
   },
-  {
-    id: 'mentor-4',
-    name: 'Vikram Singh',
-    experience: 'Cybersecurity Analyst | 7+ Years in Network Security & Ethical Hacking',
-    photo: 'https://placehold.co/300x300.png',
-    dataAiHint: 'man tech',
-    linkedinUrl: 'https://linkedin.com/in/vikramsingh',
-  },
+  // {
+  //   id: 'mentor-4',
+  //   name: 'Vikram Singh',
+  //   experience: 'Cybersecurity Analyst | 7+ Years in Network Security & Ethical Hacking',
+  //   photo: '/images/PrakashKr.png',
+  //   dataAiHint: 'man tech',
+  //   linkedinUrl: 'https://linkedin.com/in/vikramsingh',
+  // },
 ];
 
 export const PLACEHOLDER_ARTICLES: Article[] = [
@@ -98,7 +99,7 @@ export const PLACEHOLDER_ARTICLES: Article[] = [
     summary: 'Understand the core concepts of Big O notation and why it\'s crucial for analyzing algorithm efficiency. Learn with simple examples.',
     date: '2024-07-15',
     author: 'Dr. Algorithm',
-    image: 'https://placehold.co/800x450.png',
+    image: '/images/download.jpeg',
     dataAiHint: 'abstract algorithm',
     tags: ['DSA', 'Big O Notation', 'Algorithms'],
     content: `
@@ -123,7 +124,7 @@ export const PLACEHOLDER_ARTICLES: Article[] = [
     summary: 'Recursion can be tricky. This article highlights common mistakes beginners make and provides tips for mastering recursive thinking.',
     date: '2024-07-20',
     author: 'Recursive Guru',
-    image: 'https://placehold.co/800x450.png',
+    image: '/images/download.jpeg',
     dataAiHint: 'code problem',
     tags: ['DSA', 'Recursion', 'Problem Solving'],
      content: `
@@ -147,7 +148,7 @@ export const PLACEHOLDER_ARTICLES: Article[] = [
     summary: 'A practical comparison of Arrays and Linked Lists, helping you decide which data structure to use for different scenarios in DSA.',
     date: '2024-07-25',
     author: 'Structy McStructureface',
-    image: 'https://placehold.co/800x450.png',
+    image: '/images/download.jpeg',
     dataAiHint: 'data flow',
     tags: ['DSA', 'Data Structures', 'Arrays', 'Linked Lists'],
     content: `
@@ -189,4 +190,38 @@ export const PLACEHOLDER_ARTICLES: Article[] = [
       <p>Understanding these trade-offs is key to effective problem-solving in DSA.</p>
     `
   },
+];
+
+export const PLACEHOLDER_TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'testimonial-1',
+    name: 'Sarah Johnson',
+    company: 'Google',
+    message: 'The DSA course at Code Yuva was instrumental in helping me land my dream job at Google. The concepts were explained clearly, and the hands-on practice was invaluable.'
+  },
+  {
+    id: 'testimonial-2',
+    name: 'David Chen',
+    company: 'Microsoft',
+    message: 'I highly recommend the Full-Stack Development course. The instructors were fantastic, and I gained the skills and confidence to build real-world applications.'
+  },
+  {
+    id: 'testimonial-4',
+    name: 'Emily Rodriguez',
+    company: 'Meta',
+    message: 'Code Yuva\'s mentors are incredibly supportive. Their guidance during my interview preparation was key to my success in getting an offer from Meta.'
+  },
+  {
+    id: 'testimonial-5',
+    name: 'Michael Lee',
+    company: 'Apple',
+    message: 'The practical projects in the courses are top-notch. Building real applications with Code Yuva gave me the edge I needed to get hired at Apple.'
+  },
+
+  {
+    id: 'testimonial-3',
+    name: 'Amit Patel',
+    company: 'Amazon',
+    message: 'The Machine Learning course provided a solid foundation in AI. The projects were engaging, and I felt well-prepared to work on ML tasks after completing it.'
+  }
 ];

@@ -22,10 +22,10 @@ export function CourseCard({ course }: CourseCardProps) {
             <Image
               src={course.image}
               alt={course.title}
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-500 group-hover:scale-105"
+              fill // Replaces layout="fill"
+              className="transition-transform duration-500 group-hover:scale-105 object-fill" // object-cover replaces objectFit="cover"
               data-ai-hint={course.dataAiHint}
+              sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </DialogTrigger>
         </div>
@@ -65,8 +65,7 @@ export function CourseCard({ course }: CourseCardProps) {
           <Image
             src={course.image}
             alt={course.title}
-            layout="fill"
-            objectFit="cover"
+            fill // Replaces layout="fill"
             priority
             data-ai-hint={course.dataAiHint || 'course education'}
           />

@@ -60,15 +60,15 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-primary" />
-                <a href="mailto:info@codeyuva.com" className="hover:text-primary">info@codeyuva.com</a>
+                <a href="mailto:codeyuva2025@gmail.com" className="hover:text-primary">codeyuva2025@gmail.com</a>
               </li>
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-primary" />
-                <a href="tel:+1234567890" className="hover:text-primary">+1 (234) 567-890</a>
+                <a href="tel:+917042871532" className="hover:text-primary">+917042871532</a>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5 text-primary shrink-0" />
-                <span>123 Code Street, Tech City, TC 54321</span>
+                <span>House no. 17-A/A, Block-A,Dwarka mor patel Garden,New Delhi</span>
               </li>
             </ul>
           </div>

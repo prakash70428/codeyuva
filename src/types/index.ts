@@ -35,3 +35,10 @@ export interface Article {
   content?: string; // Full content for the individual blog post page
   tags: string[];
 }
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  company: string;
+  message: string;
+}

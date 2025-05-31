@@ -15,8 +15,7 @@ function BlogPreviewCard({ article }: { article: Article }) {
           <Image
             src={article.image}
             alt={article.title}
-            layout="fill"
-            objectFit="cover"
+            fill // Replaces layout="fill"
             className="transition-transform duration-500 group-hover:scale-105"
             data-ai-hint={article.dataAiHint}
           />
