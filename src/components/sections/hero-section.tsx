@@ -19,9 +19,9 @@ export function HeroSection() {
             <Button size="lg" asChild className="shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
               <Link href="#courses-section">Get Started Today</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="hover:bg-primary/50 hover:text-white transition-all duration-300 transform hover:scale-105">
+            {/* <Button size="lg" variant="outline" asChild className="hover:bg-primary/50 hover:text-white transition-all duration-300 transform hover:scale-105">
               <Link href="/blog">Explore Blog</Link>
-            </Button>
+            </Button> */}
           </div>
            <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="flex items-center"><CheckCircle className="w-4 h-4 mr-1.5 text-primary" /> Expert Mentors</span>

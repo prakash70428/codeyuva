@@ -54,7 +54,7 @@ export function CourseCard({ course }: CourseCardProps) {
         <CardFooter>
           <DialogTrigger asChild>
             <Button className="w-full shadow-md hover:shadow-lg transition-shadow">
-              View Details & Enroll
+              View Details & Book Demo Session
             </Button>
           </DialogTrigger>
         </CardFooter>
@@ -79,6 +79,23 @@ export function CourseCard({ course }: CourseCardProps) {
         </div>
         
         <div className="p-6 md:p-8 space-y-6">
+          {/* Fees Section */}
+          {/* Apply fade-in animation and emphasize limited time offer */}
+          {course.originalFee && course.discountedFee && course.discountPercentage && (
+            <>
+              {/* Added animate-fadeIn class for a subtle fade-in */}
+              <div className="flex items-center text-xl font-semibold text-foreground animate-fadeIn">
+                <span role="img" aria-label="course fee" className="mr-2">💸</span> Course Fee:
+                <span className="line-through text-gray-400 ml-4 mr-2">₹{course.originalFee}</span>
+                {/* Changed text color to #FF9A40 */}
+                <span className="text-[#FF9A40] font-bold">₹{course.discountedFee}</span>
+                <span className="text-sm text-green-500 ml-2">({course.discountPercentage}% OFF)</span>
+                <span className="text-xs text-yellow-600 ml-4 font-medium">Limited-Time Offer!</span> {/* Added urgency text */}
+              </div>
+              <Separator className="my-6" />
+            </>
+          )}
+
           <DialogDescription className="text-base md:text-lg text-muted-foreground">
             {course.description}
           </DialogDescription>
@@ -117,8 +134,12 @@ export function CourseCard({ course }: CourseCardProps) {
           <Separator className="my-6" />
 
           <div className="text-center">
-              <Button size="lg" className="w-full md:w-auto shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
-                  Enroll in {course.title}
+              <Button
+                size="lg"
+                className="w-full md:w-auto shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSecK5qCp2acCYoHP1RxYj0QogPozyVQDAyG8v-ti3fCiFYivg/viewform?usp=header', '_blank')}
+              >
+                  Book Demo Session for {course.title}
               </Button>
                <p className="text-xs text-muted-foreground mt-3">
                   Limited seats available. Secure your spot today!

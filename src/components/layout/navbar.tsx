@@ -41,7 +41,7 @@ export function Navbar() {
         </nav>
         <div className="hidden md:block">
           <Button asChild className="shadow-md hover:shadow-lg transition-shadow">
-            <Link href="#courses-section">Enroll Now</Link>
+            <Link href="#courses-section">Join Demo Session</Link>
           </Button>
         </div>
         <div className="md:hidden">

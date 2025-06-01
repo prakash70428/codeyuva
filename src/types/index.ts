@@ -8,6 +8,9 @@ export interface Course {
   id: string;
   title: string;
   description: string;
+  originalFee: number;
+  discountedFee: number;
+  discountPercentage: number;
   syllabusOverview: string[];
   duration: string;
   whoShouldJoin: string[];

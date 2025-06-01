@@ -34,6 +34,9 @@ export const PLACEHOLDER_COURSES: Course[] = [
     whoShouldJoin: ['Aspiring Software Engineers', 'Students preparing for interviews', 'Developers seeking to strengthen fundamentals'],
     image: '/images/dsapicture.png',
     dataAiHint: 'coding data',
+    originalFee: 10000,
+    discountedFee: 8000,
+    discountPercentage: 20,
   },
   {
     id: 'fullstack-pro',
@@ -44,6 +47,9 @@ export const PLACEHOLDER_COURSES: Course[] = [
     whoShouldJoin: ['Beginners in web development', 'Designers wanting to code', 'Entrepreneurs building web apps'],
     image: '/images/mernPicture.webp',
     dataAiHint: 'web development',
+    originalFee: 10000,
+    discountedFee: 7000,
+    discountPercentage: 30,
   },
   {
     id: 'ml-foundations',
@@ -54,6 +60,9 @@ export const PLACEHOLDER_COURSES: Course[] = [
     whoShouldJoin: ['Data Science Enthusiasts', 'Analysts looking to upskill', 'Engineers curious about AI'],
     image: '/images/mlpicture.webp',
     dataAiHint: 'machine learning',
+    originalFee: 10000,
+    discountedFee: 4999,
+    discountPercentage: 50,
   },
 ];
 

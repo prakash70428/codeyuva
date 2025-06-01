@@ -1,5 +1,7 @@
 "use client";
 
+import { db } from '@/lib/firebase';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { useState, type FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,19 +13,44 @@ import { Loader2, Mail, Phone, MapPin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast"
 
 // Server Action (simulated for now)
-async function submitContactForm(data: { name: string; email: string; message: string }) {
-  // In a real app, you'd send this data to your backend or a service like Formspree/Resend.
-  console.log("Form data submitted:", data);
-  // Simulate API delay
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  // Simulate success or failure
-  // if (Math.random() > 0.2) { // 80% success rate
-  //   return { success: true, message: "Message sent successfully! We'll be in touch soon." };
-  // } else {
-  //   throw new Error("Failed to send message. Please try again.");
-  // }
-  return { success: true, message: "Message sent successfully! We'll be in touch soon." };
+// async function submitContactForm(data: { name: string; email: string; message: string }) {
+//   // In a real app, you'd send this data to your backend or a service like Formspree/Resend.
+//   console.log("Form data submitted:", data);
+//   // Simulate API delay
+//   await new Promise(resolve => setTimeout(resolve, 1500));
+//   // Simulate success or failure
+//   // if (Math.random() > 0.2) { // 80% success rate
+//   //   return { success: true, message: "Message sent successfully! We'll be in touch soon." };
+//   // } else {
+//   //   throw new Error("Failed to send message. Please try again.");
+//   // }
+//   return { success: true, message: "Message sent successfully! We'll be in touch soon." };
+// }
+
+async function submitContactForm(data: { name: string; phone: string; message: string }) {
+  try {
+
+    console.log("Data being sent to Firestore:", data); // Add this line
+    console.log("Type of name:", typeof data.name); // Add this line
+    console.log("Type of phone:", typeof data.phone); // Add this line
+    console.log("Type of message:", typeof data.message); // Add this line
+
+    const messagesCollectionRef = collection(db, 'messages'); // Get a reference to the 'messages' collection
+
+    await addDoc(messagesCollectionRef, { // Add a new document to the collection
+      name: data.name,
+      phone: data.phone,
+      message: data.message,
+      timestamp: Timestamp.now() // Add a server-side timestamp
+    });
+
+    return { success: true, message: "Message sent successfully! We'll be in touch soon." };
+  } catch (error: any) {
+    console.error("Error adding document to Firestore:", error);
+    throw new Error("Failed to send message. Please try again later.");
+  }
 }
+
 
 
 export function ContactSection() {
@@ -36,11 +63,11 @@ export function ContactSection() {
 
     const formData = new FormData(event.currentTarget);
     const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
     const message = formData.get('message') as string;
 
     try {
-      const result = await submitContactForm({ name, email, message });
+      const result = await submitContactForm({ name, phone, message });
       if (result.success) {
         toast({
           title: "Success!",
