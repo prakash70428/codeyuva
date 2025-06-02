@@ -62,6 +62,10 @@ export function CourseCard({ course }: CourseCardProps) {
 
       <DialogContent className="sm:max-w-[600px] md:max-w-[800px] lg:max-w-[900px] p-0 max-h-[90vh] overflow-y-auto bg-card border-border">
         <div className="relative w-full aspect-[16/7] md:aspect-[16/6]">
+        <DialogTitle>Course Details</DialogTitle>
+
+          {/* Added DialogDescription for accessibility */}
+          <DialogDescription className="sr-only">{course.description}</DialogDescription>
           <Image
             src={course.image}
             alt={course.title}
@@ -95,10 +99,6 @@ export function CourseCard({ course }: CourseCardProps) {
               <Separator className="my-6" />
             </>
           )}
-
-          <DialogDescription className="text-base md:text-lg text-muted-foreground">
-            {course.description}
-          </DialogDescription>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">

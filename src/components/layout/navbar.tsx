@@ -6,7 +6,7 @@ import { NAV_LINKS } from '@/lib/constants';
 import { Button } from '@/components/ui/button';
 import { AnimatedLogo } from '@/components/ui/animated-logo';
 import { Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { useEffect, useState } from 'react';
 
 export function Navbar() {
@@ -54,6 +54,8 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col space-y-6 p-6">
+                <SheetTitle className="m*-0 p*-0"></SheetTitle>
+                <SheetDescription className="m*-0 p*-0"></SheetDescription>
                 <AnimatedLogo />
                 <nav className="flex flex-col space-y-4">
                   {NAV_LINKS.map((link) => (
@@ -69,7 +71,7 @@ export function Navbar() {
                 </nav>
                 <SheetClose asChild>
                     <Button asChild className="w-full shadow-md hover:shadow-lg transition-shadow">
-                        <Link href="#courses-section">Enroll Now</Link>
+                        <Link href="#courses-section">Join Demo Session</Link>
                     </Button>
                 </SheetClose>
               </div>

@@ -41,7 +41,7 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-3 text-foreground">Company</h3>
             <ul className="space-y-2">
               {FOOTER_LINKS.map((link) => (
@@ -52,7 +52,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
           
           {/* Contact Info */}
           <div>
@@ -64,11 +64,11 @@ export function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-primary" />
-                <a href="tel:+917042871532" className="hover:text-primary">+917042871532</a>
+                <a href="tel:+918368624572" className="hover:text-primary">+918368624572</a>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-0.5 text-primary shrink-0" />
-                <span>House no. 17-A/A, Block-A,Dwarka mor patel Garden,New Delhi</span>
+                <span>House no. 17-A/A, Block-A, Patel Garden, Dwarka Mor,New Delhi-110078</span>
               </li>
             </ul>
           </div>

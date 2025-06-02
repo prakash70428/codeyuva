@@ -1,7 +1,10 @@
 "use client"
 
 import * as React from "react"
-import * as MenubarPrimitive from "@radix-ui/react-menubar"
+import * as MenubarPrimitive from "@radix-ui/react-menubar";
+// Assuming DialogTitle and DialogDescription are exported from your dialog component file
+// You might need to adjust the import path based on your project structure
+import { DialogTitle, DialogDescription } from "./dialog";
 import { Check, ChevronRight, Circle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
@@ -122,6 +125,8 @@ const MenubarContent = React.forwardRef<
         )}
         {...props}
       />
+      {/* The actual content of your menubar dropdown would go here */}
+      {/* If this MenubarContent is used to render a Dialog, place DialogTitle and DialogDescription inside */}
     </MenubarPrimitive.Portal>
   )
 )

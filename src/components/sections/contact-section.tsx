@@ -141,11 +141,11 @@ export function ContactSection() {
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-primary" />
-                <a href="tel:+917042871532" className="text-muted-foreground hover:text-primary">+917042871532</a>
+                <a href="tel:+918368624572" className="text-muted-foreground hover:text-primary">+918368624572</a>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-1 text-primary shrink-0" />
-                <span className="text-muted-foreground">House no. 17-A/A, Block-A, Dwarka mor Patel Garden, New Delhi</span>
+                <span className="text-muted-foreground">House no. 17-A/A, Block-A, Patel Garden, Dwarka Mor, New Delhi-110078</span>
               </div>
             </CardContent>
           </Card>
