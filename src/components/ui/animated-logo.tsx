@@ -18,6 +18,7 @@ export function AnimatedLogo({ className }: AnimatedLogoProps) {
         alt='Code Yuva Logo'
         width={28}
         height={28}
+        unoptimized
       />
       <span className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
         Code<span className="text-primary group-hover:text-foreground transition-colors duration-300">Yuva</span>

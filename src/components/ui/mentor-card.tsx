@@ -23,6 +23,7 @@ export function MentorCard({ mentor }: MentorCardProps) {
               className='object-contain'
               data-ai-hint={mentor.dataAiHint}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              unoptimized
             />
           </div>
           <CardTitle className="text-xl font-semibold">{mentor.name}</CardTitle>

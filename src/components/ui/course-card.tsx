@@ -26,6 +26,7 @@ export function CourseCard({ course }: CourseCardProps) {
               className="transition-transform duration-500 group-hover:scale-105 object-fill" // object-cover replaces objectFit="cover"
               data-ai-hint={course.dataAiHint}
               sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              unoptimized
             />
           </DialogTrigger>
         </div>

@@ -36,7 +36,7 @@ export const PLACEHOLDER_COURSES: Course[] = [
     dataAiHint: 'coding data',
     originalFee: 20000,
     discountedFee: 12000,
-    discountPercentage: 60,
+    discountPercentage: 40,
   },
   {
     id: 'fullstack-pro',
@@ -49,7 +49,7 @@ export const PLACEHOLDER_COURSES: Course[] = [
     dataAiHint: 'web development',
     originalFee: 25000,
     discountedFee: 15000,
-    discountPercentage: 60,
+    discountPercentage: 40,
   },
   {
     id: 'ml-foundations',
@@ -62,7 +62,7 @@ export const PLACEHOLDER_COURSES: Course[] = [
     dataAiHint: 'machine learning',
     originalFee: 20000,
     discountedFee: 12000,
-    discountPercentage: 60,
+    discountPercentage: 40,
   },
 ];
 
