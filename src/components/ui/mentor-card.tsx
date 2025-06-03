@@ -20,7 +20,7 @@ export function MentorCard({ mentor }: MentorCardProps) {
               src={mentor.photo}
               alt={mentor.name}
               fill // Replaces layout="fill"
-              className='object-contain'
+              className='object-conatain'
               data-ai-hint={mentor.dataAiHint}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               unoptimized
