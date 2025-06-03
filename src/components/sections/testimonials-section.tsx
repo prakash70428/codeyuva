@@ -31,7 +31,7 @@ export function TestimonialsSection() {
   return (
     <section id="testimonials-section" className="py-16 bg-gradient-to-b from-background to-background/90">
       <div className="container text-center mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Student Testimonials</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">Student Testimonials</h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           Learn from industry professionals with years of real-world experience and a passion for teaching.
         </p>

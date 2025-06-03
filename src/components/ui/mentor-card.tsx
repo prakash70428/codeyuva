@@ -27,7 +27,7 @@ export function MentorCard({ mentor }: MentorCardProps) {
             />
           </div>
           <CardTitle className="text-xl font-semibold">{mentor.name}</CardTitle>
-          <CardDescription className="text-sm text-primary mt-1 flex items-start justify-center">
+          <CardDescription className="text-sm text-primary mt-1 flex flex-row items-start justify-center">
             <Briefcase className="w-4 h-4 mt-1 mr-1.5" />
             {mentor.experience.split('|')[0].trim()}
           </CardDescription>
