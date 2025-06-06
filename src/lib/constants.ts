@@ -69,19 +69,19 @@ export const PLACEHOLDER_COURSES: Course[] = [
 export const PLACEHOLDER_MENTORS: Mentor[] = [
   {
     id: 'mentor-1',
-    name: 'Prakash Kumar Prasad',
-    experience: 'Ex-Product Engineer and Java Mentor @ Coding Blocks | NSUT Delhi Alumnus | 5+ Years experience in teaching | passionate about simplifying complex tech concepts for students',
-    photo: '/images/PrakashKr.png',
-    dataAiHint: 'woman portrait',
-    linkedinUrl: 'https://www.linkedin.com/in/prakash-kumar-464a63169/',
-  },
-  {
-    id: 'mentor-2',
     name: 'Pawan kumar',
     experience: 'Software Development Engineer, SDE-II @ Amazon | NSUT Delhi Alumnus | 6+ Years in Industry Experience | Built Real-Time Systems for Millions of Users',
     photo: '/images/PawanSir.jpg',
     dataAiHint: 'man portrait',
     linkedinUrl: 'https://www.linkedin.com/in/pawan-kumar-375b53141/',
+  },
+  {
+    id: 'mentor-2',
+    name: 'Prakash Kumar Prasad',
+    experience: 'Ex-Product Engineer and Java Mentor @ Coding Blocks | NSUT Delhi Alumnus | 5+ Years experience in teaching | passionate about simplifying complex tech concepts for students',
+    photo: '/images/PrakashKr.png',
+    dataAiHint: 'woman portrait',
+    linkedinUrl: 'https://www.linkedin.com/in/prakash-kumar-464a63169/',
   },
   {
     id: 'mentor-3',
