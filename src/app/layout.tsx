@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'CodeYuva Academy - Master DSA & Beyond',
+  title: 'CodeYuva - Master DSA & Beyond',
   description: 'Join CodeYuva Academy to master Data Structures & Algorithms, Full-Stack Development, and more with expert mentors and interactive courses.',
   keywords: ['CodeYuva Academy', 'DSA', 'Data Structures', 'Algorithms', 'Coding Bootcamp', 'Learn to Code', 'Programming Courses', 'Full-Stack Development'],
 };
