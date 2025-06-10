@@ -79,7 +79,7 @@ export const PLACEHOLDER_MENTORS: Mentor[] = [
     id: 'mentor-2',
     name: 'Prakash Kumar Prasad',
     experience: 'Ex-Product Engineer and Java Mentor @ Coding Blocks | NSUT Delhi Alumnus | 5+ Years experience in teaching | passionate about simplifying complex tech concepts for students',
-    photo: '/images/PrakashKr.png',
+    photo: '/images/praky.jpg',
     dataAiHint: 'woman portrait',
     linkedinUrl: 'https://www.linkedin.com/in/prakash-kumar-464a63169/',
   },
