@@ -20,7 +20,7 @@ export const SOCIAL_LINKS: NavItem[] = [
   { label: 'Facebook', href: 'https://www.facebook.com/people/Code-Yuva/61576738535747/', external: true },
   // { label: 'Twitter', href: '#', external: true },
   { label: 'Instagram', href: 'https://www.instagram.com/code.yuva?igsh=MXZhcTgwMGhpeTl6Nw==', external: true },
-  { label: 'LinkedIn', href: '#', external: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/code-yuva-54bb5236a/', external: true },
 ];
 
 
@@ -204,33 +204,32 @@ export const PLACEHOLDER_ARTICLES: Article[] = [
 export const PLACEHOLDER_TESTIMONIALS: Testimonial[] = [
   {
     id: 'testimonial-1',
-    name: 'Sarah Johnson',
-    company: 'Google',
-    message: 'The DSA course at Code Yuva was instrumental in helping me land my dream job at Google. The concepts were explained clearly, and the hands-on practice was invaluable.'
+    name: 'Anushka Singh',
+    company: 'Greenway Health',
+    message: 'Joining Code Yuva\'s DSA course was a turning point in my coding journey.Concepts were taught from scratch with real-world problems.The mentorship here truly builds confidence.'
   },
   {
+    id: 'testimonial-3',
+    name: 'Manan Matta',
+    company: 'Colt Technology Services',
+    message: 'I had no programming background,but code yuva made learning Java so simple. Now I can write clean code, understand data structures, and even guide my juniors.'
+  },
+   {
     id: 'testimonial-2',
-    name: 'David Chen',
+    name: 'Pyanshi Jain',
     company: 'Microsoft',
-    message: 'I highly recommend the Full-Stack Development course. The instructors were fantastic, and I gained the skills and confidence to build real-world applications.'
+    message: 'Code Yuva played a huge role in my journey from college to Microsoft. The clarity I got in Data Structures and problem-solving here made a real difference in my interviews. Their mentorship is not just about coding-it\'s about mindset,discipline, and smart preparation.Grateful to be a part of this community.'
   },
   {
     id: 'testimonial-4',
-    name: 'Emily Rodriguez',
-    company: 'Meta',
-    message: 'Code Yuva\'s mentors are incredibly supportive. Their guidance during my interview preparation was key to my success in getting an offer from Meta.'
+    name: 'Ritika Verma',
+    company: 'HexaStack Technologies',
+    message: 'Joining Code Yuva was the best decision of my career.I started with zero knowledge of backend, and today I\'m working as a Full Stack Developer at HexaStack Technologies. The structured curriculum, weekly project reviews, and personal mentorship helped me every step of the way.'
   },
   {
     id: 'testimonial-5',
-    name: 'Michael Lee',
-    company: 'Apple',
-    message: 'The practical projects in the courses are top-notch. Building real applications with Code Yuva gave me the edge I needed to get hired at Apple.'
-  },
-
-  {
-    id: 'testimonial-3',
-    name: 'Amit Patel',
-    company: 'Amazon',
-    message: 'The Machine Learning course provided a solid foundation in AI. The projects were engaging, and I felt well-prepared to work on ML tasks after completing it.'
+    name: 'Kunal Sharma',
+    company: 'DevGlide',
+    message: 'Not having a CS degree made me feel like an outsider in tech. But Code Yuva curriculum is built for anyone willing to learn. They taught me how to build,think and debug like a developer. Today, I\'m proud to say I work in the development team at a growing IT company in Pune.'
   }
 ];
