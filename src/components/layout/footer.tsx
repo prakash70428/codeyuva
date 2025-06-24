@@ -78,7 +78,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm">
           <p className="text-muted-foreground mb-4 md:mb-0">
-            &copy; {currentYear} CodeYuva. All rights reserved.
+            {currentYear} CodeYuva &trade;. All rights reserved.
           </p>
           <div className="flex space-x-4">
             {SOCIAL_LINKS.map((link) => {

@@ -36,40 +36,42 @@ export function TestimonialsSection() {
           Learn from industry professionals with years of real-world experience and a passion for teaching.
         </p>
         {/* Outer container to hide overflow and manage staggered animation */}
-        <motion.div
+        <div
           className="overflow-hidden py-12" // Hide the overflow for the horizontal scroll
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          // variants={containerVariants}
+          // initial="hidden"
+          // animate="visible"
         >
           <motion.div
-            className="flex gap-8" // Use flexbox for horizontal layout and gap
+            className="flex gap-8 w-max" // Use flexbox for horizontal layout and gap
             
+            animate={{ x: ["0%", "-50%"] }}
+
             // framer-motion animation for continuous horizontal scroll
             transition={{
-              x: {
+              
                 repeat: Infinity,
-                repeatType: "loop",
-                duration: 20, // Adjust duration for desired speed
+                // repeatType: "loop",
+                duration: 10, // Adjust duration for desired speed
                 ease: "linear", // Linear ease for constant speed
-              },
+              
             }}
             // Initial and animated state to create the loop
-            initial={{ x: "0%" }}
-            animate={{ x: "-50%" }} // Translate by 50% to loop through duplicated content
+            // initial={{ x: "0%" }}
+            // animate={{ x: "-50%" }} // Translate by 50% to loop through duplicated content
           >
             {duplicatedTestimonials.map((testimonial, index) => (
               // Use a unique key for each duplicated testimonial
-              <motion.div
+              <div
                 key={`${testimonial.id}-${index}`}
-                className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px]"
-                variants={itemVariants} // Apply item variants for staggered animation
+                className="flex-shrink-0 w-[300px] md:w-[350px] lg:w-[400px]"
+                // variants={itemVariants} // Apply item variants for staggered animation
               >
                 <TestimonialCard testimonial={testimonial} />
-              </motion.div>
+              </div>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
