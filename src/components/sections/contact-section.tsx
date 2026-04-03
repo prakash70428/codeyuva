@@ -105,7 +105,7 @@ export function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-sm font-medium">Full Name</Label>
-                <Input id="name" name="name" type="text" placeholder="John Doe" required className="mt-1 bg-input" />
+                <Input id="name" name="name" type="text" placeholder="Madhav Kumar" required className="mt-1 bg-input" />
               </div>
               <div>
                 <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>

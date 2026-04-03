@@ -21,10 +21,9 @@ export function Navbar() {
   }, []);
 
   return (
-    <header 
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md shadow-lg border-b border-border/50' : 'bg-transparent border-b border-transparent'
-      } relative`} // Added relative for positioning the gradient
+    <header
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ease-in-out ${isScrolled ? 'bg-background/80 backdrop-blur-md shadow-lg border-b border-border/50' : 'bg-transparent border-b border-transparent'
+        } relative`} // Added relative for positioning the gradient
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <AnimatedLogo />
@@ -39,50 +38,49 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-          <Button asChild className="shadow-md hover:shadow-lg transition-shadow">
-            <Link href="#courses-section">Join Demo Session</Link>
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Button asChild className="h-9 sm:h-10 px-3 sm:px-4 text-xs sm:text-sm shadow-md hover:shadow-lg transition-shadow">
+            <Link href="https://cydsajava.netlify.app/" target="_blank" rel="noopener noreferrer">DSA Grind Mode⚡</Link>
           </Button>
-        </div>
-        <div className="md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
-              <div className="flex flex-col space-y-6 p-6">
-                <SheetTitle className="m*-0 p*-0"></SheetTitle>
-                <SheetDescription className="m*-0 p*-0"></SheetDescription>
-                <AnimatedLogo />
-                <nav className="flex flex-col space-y-4">
-                  {NAV_LINKS.map((link) => (
-                     <SheetClose asChild key={link.label}>
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-9 w-9">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
+                <div className="flex flex-col space-y-6 p-6">
+                  <SheetTitle className="m*-0 p*-0"></SheetTitle>
+                  <SheetDescription className="m*-0 p*-0"></SheetDescription>
+                  <AnimatedLogo />
+                  <nav className="flex flex-col space-y-4">
+                    {NAV_LINKS.map((link) => (
+                      <SheetClose asChild key={link.label}>
                         <Link
-                        href={link.href}
-                        className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors"
+                          href={link.href}
+                          className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors"
                         >
-                        {link.label}
+                          {link.label}
                         </Link>
-                    </SheetClose>
-                  ))}
-                </nav>
-                <SheetClose asChild>
+                      </SheetClose>
+                    ))}
+                  </nav>
+                  <SheetClose asChild>
                     <Button asChild className="w-full shadow-md hover:shadow-lg transition-shadow">
-                        <Link href="#courses-section">Join Demo Session</Link>
+                      <Link href="https://cydsajava.netlify.app/" target="_blank" rel="noopener noreferrer">DSA Grind Mode⚡</Link>
                     </Button>
-                </SheetClose>
-              </div>
-            </SheetContent>
-          </Sheet>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
       <div
-        className={`absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-gray-200/20 via-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ease-in-out ${
-          isScrolled ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-gray-200/20 via-gray-200/10 to-transparent pointer-events-none transition-opacity duration-300 ease-in-out ${isScrolled ? 'opacity-100' : 'opacity-0'
+          }`}
       />
     </header>
   );
