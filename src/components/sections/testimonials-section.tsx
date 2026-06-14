@@ -3,69 +3,48 @@
 import { PLACEHOLDER_TESTIMONIALS } from "@/lib/constants";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import { motion } from "framer-motion";
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2, // Adjust stagger delay as needed
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 }, // Initial state (hidden below and faded)
-  visible: {
-    opacity: 1,
-    y: 0, // Animated state (visible at original position)
-  },
-};
+import { SectionHeader } from "@/components/ui/section-header";
+import { MessageSquareQuote } from "lucide-react";
 
 export function TestimonialsSection() {
-  // Duplicate testimonials to create a seamless loop effect
   const duplicatedTestimonials = [
     ...PLACEHOLDER_TESTIMONIALS,
     ...PLACEHOLDER_TESTIMONIALS,
   ];
 
   return (
-    <section id="testimonials-section" className="py-16 bg-gradient-to-b from-background to-background/90">
-      <div className="container text-center mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">Student Testimonials</h2>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Learn from industry professionals with years of real-world experience and a passion for teaching.
-        </p>
-        {/* Outer container to hide overflow and manage staggered animation */}
-        <div
-          className="overflow-hidden py-12" // Hide the overflow for the horizontal scroll
-          // variants={containerVariants}
-          // initial="hidden"
-          // animate="visible"
-        >
-          <motion.div
-            className="flex gap-8 w-max" // Use flexbox for horizontal layout and gap
-            
-            animate={{ x: ["0%", "-50%"] }}
+    <section id="testimonials-section" className="py-16 md:py-24 lg:py-32 relative overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[hsl(265_70%_60%/0.04)] rounded-full blur-[150px]" />
+      </div>
 
-            // framer-motion animation for continuous horizontal scroll
+      <div className="container mx-auto px-4">
+        <SectionHeader
+          icon={MessageSquareQuote}
+          iconColor="text-[hsl(40_80%_60%)]"
+          title="Student Testimonials"
+          subtitle="Hear from students who transformed their careers with CodeYuva."
+        />
+
+        {/* Marquee with gradient edge fades */}
+        <div className="relative overflow-hidden py-8">
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+          <motion.div
+            className="flex gap-8 w-max"
+            animate={{ x: ["0%", "-50%"] }}
             transition={{
-              
-                repeat: Infinity,
-                // repeatType: "loop",
-                duration: 10, // Adjust duration for desired speed
-                ease: "linear", // Linear ease for constant speed
-              
+              repeat: Infinity,
+              duration: 25,
+              ease: "linear",
             }}
-            // Initial and animated state to create the loop
-            // initial={{ x: "0%" }}
-            // animate={{ x: "-50%" }} // Translate by 50% to loop through duplicated content
           >
             {duplicatedTestimonials.map((testimonial, index) => (
-              // Use a unique key for each duplicated testimonial
               <div
                 key={`${testimonial.id}-${index}`}
-                className="flex-shrink-0 w-[300px] md:w-[350px] lg:w-[400px]"
-                // variants={itemVariants} // Apply item variants for staggered animation
+                className="flex-shrink-0 w-[320px] md:w-[380px]"
               >
                 <TestimonialCard testimonial={testimonial} />
               </div>
@@ -76,4 +55,3 @@ export function TestimonialsSection() {
     </section>
   );
 }
-        

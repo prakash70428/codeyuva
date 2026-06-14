@@ -11,7 +11,7 @@ export function SectionWrapper({ children, className, id, ...props }: SectionWra
   return (
     <section
       id={id}
-      className={cn('w-full py-12 md:py-20 lg:py-28', className)}
+      className={cn('w-full py-16 md:py-24 lg:py-32', className)}
       {...props}
     >
       <div className="container px-4 md:px-6 mx-auto">
