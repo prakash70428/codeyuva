@@ -92,7 +92,7 @@ export function HeroSection() {
                 <span className="ml-3 text-xs text-muted-foreground font-mono">main.js</span>
               </div>
               <div className="p-5 font-mono text-sm text-green-300/90 h-72 overflow-y-auto">
-                <p className="text-muted-foreground/50">// DSA Example: Binary Search</p>
+                <p className="text-muted-foreground/50"><span>{'// DSA Example: Binary Search'}</span></p>
                 <p><span className="text-purple-400">function</span> <span className="text-yellow-300">binarySearch</span>(<span className="text-blue-300">arr</span>, <span className="text-blue-300">target</span>) {'{'}</p>
                 <p className="pl-4"><span className="text-purple-400">let</span> left = <span className="text-orange-400">0</span>;</p>
                 <p className="pl-4"><span className="text-purple-400">let</span> right = arr.<span className="text-yellow-300">length</span> - <span className="text-orange-400">1</span>;</p>
@@ -105,9 +105,9 @@ export function HeroSection() {
                 <p className="pl-4"><span className="text-purple-400">return</span> -<span className="text-orange-400">1</span>;</p>
                 <p>{'}'}</p>
                 <br />
-                <p className="text-muted-foreground/50">// O(log n) time complexity ✨</p>
+                <p className="text-muted-foreground/50"><span>{'// O(log n) time complexity ✨'}</span></p>
                 <p><span className="text-purple-400">const</span> result = <span className="text-yellow-300">binarySearch</span>([<span className="text-orange-400">1,3,5,7,9</span>], <span className="text-orange-400">7</span>);</p>
-                <p><span className="text-yellow-300">console</span>.<span className="text-blue-300">log</span>(result); <span className="text-muted-foreground/50">// 3</span></p>
+                <p><span className="text-yellow-300">console</span>.<span className="text-blue-300">log</span>(result); <span className="text-muted-foreground/50">{'// 3'}</span></p>
               </div>
             </CardContent>
           </Card>

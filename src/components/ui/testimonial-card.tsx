@@ -17,7 +17,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
       transition={{ duration: 0.2 }} // Add a smooth transition
     >
       <div>
-        <p className="text-white italic mb-4">"{testimonial.message}"</p>
+        <p className="text-white italic mb-4">&ldquo;{testimonial.message}&rdquo;</p>
         <p className="font-semibold" style={{ color: '#50FFD1' }}>{testimonial.name}</p>
         <p className="text-sm text-gray-400">{testimonial.company}</p>
       </div>

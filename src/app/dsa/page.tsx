@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function DSAPage() {
   useEffect(() => {
@@ -26,11 +27,14 @@ export default function DSAPage() {
 
   return (
     <>
+      {/* eslint-disable-next-line @next/next/no-css-tags */}
       <link rel="stylesheet" href="/dsa/style.css" />
+      {/* eslint-disable-next-line @next/next/no-css-tags */}
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
+      {/* eslint-disable-next-line @next/next/no-page-custom-font, @next/next/no-css-tags */}
       <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet"
@@ -38,12 +42,13 @@ export default function DSAPage() {
 
       {/* DSA Navbar */}
       <nav className="navbar">
-        <a href="/" className="logo" style={{ textDecoration: "none", cursor: "pointer" }}>
+        <Link href="/" className="logo" style={{ textDecoration: "none", cursor: "pointer" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/dsa/photos/lf.png" alt="Logo" className="logo-icon-img" />
           <span className="logo-text">
             DSA<span className="highlight">Java</span>
           </span>
-        </a>
+        </Link>
         <div className="nav-actions">
           <button id="menu-toggle" className="menu-btn hidden-lg">
             <i className="fa-solid fa-bars"></i>
@@ -68,6 +73,7 @@ export default function DSAPage() {
           </div>
           <div className="sidebar-content" id="sidebar-content"></div>
           <div className="sidebar-footer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/dsa/photos/lf.png" alt="Logo" />
             <span>Prepared by Prakash Kumar</span>
           </div>
@@ -120,6 +126,7 @@ export default function DSAPage() {
               <div className="segment-pane active" id="pane-explanation">
                 <div id="explanation-content">
                   <h3>Problem Explanation</h3>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img id="problem-image" alt="Problem Visual" style={{ width: "100%", maxWidth: "500px", borderRadius: "8px", margin: "1rem 0", display: "none", boxShadow: "var(--shadow-soft)", border: "1px solid var(--border-color)" }} />
                   <p id="explanation-text">This is a detailed explanation of the problem.</p>
                   <ul className="cool-list" id="explanation-details">
