@@ -56,21 +56,19 @@ function initDSA() {
         sidebarContent.innerHTML = '';
 
         syllabusData.forEach((chapter, cIndex) => {
-            // Chapter wrapper
+            const isLocked = cIndex > 0;
+
             const chapterWrapper = document.createElement('div');
             chapterWrapper.className = 'chapter-wrapper';
 
-            // Chapter Node
             const chapterNode = document.createElement('div');
-            chapterNode.className = 'tree-node';
-            chapterNode.innerHTML = `<i class="fa-solid fa-chevron-right"></i> ${chapter.chapterTitle}`;
+            chapterNode.className = 'tree-node' + (isLocked ? ' locked-chapter' : '');
+            chapterNode.innerHTML = `<i class="fa-solid fa-chevron-right"></i> ${chapter.chapterTitle} ${isLocked ? '<i class="fa-solid fa-lock" style="margin-left:6px;font-size:0.75rem;opacity:0.6;color:#f59e0b;"></i>' : ''}`;
 
-            // Chapter Children container
             const chapterChildren = document.createElement('div');
             chapterChildren.className = 'tree-children';
 
-            // Generate Subchapters
-            chapter.subchapters.forEach((subchapter, sIndex) => {
+            chapter.subchapters.forEach((subchapter) => {
                 const subWrapper = document.createElement('div');
                 subWrapper.className = 'subchapter-wrapper';
 
@@ -81,29 +79,74 @@ function initDSA() {
                 const subChildren = document.createElement('div');
                 subChildren.className = 'tree-children';
 
-                // Generate Problems
-                subchapter.problems.forEach((problem, pIndex) => {
+                subchapter.problems.forEach((problem) => {
                     const probNode = document.createElement('div');
-                    probNode.className = 'problem-node';
-                    probNode.innerText = problem.title;
+                    probNode.className = 'problem-node' + (isLocked ? ' locked-problem' : '');
                     probNode.dataset.title = `${chapter.chapterTitle} - ${subchapter.subTitle} - ${problem.title}`;
                     probNode.dataset.id = problem.id;
+                    probNode.dataset.locked = isLocked ? 'true' : 'false';
 
-                    probNode.addEventListener('click', () => selectProblem(probNode));
+                    if (isLocked) {
+                        probNode.innerHTML = `<i class="fa-solid fa-lock" style="font-size:0.65rem;margin-right:5px;opacity:0.5;color:#f59e0b;"></i>${problem.title}`;
+                    } else {
+                        probNode.innerText = problem.title;
+                    }
+
+                    probNode.addEventListener('click', () => {
+                        if (isLocked) {
+                            showLockedState(chapter.chapterTitle);
+                        } else {
+                            selectProblem(probNode);
+                        }
+                    });
                     subChildren.appendChild(probNode);
                 });
 
-                subNode.addEventListener('click', (e) => toggleTree(subNode));
+                subNode.addEventListener('click', () => toggleTree(subNode));
                 subWrapper.appendChild(subNode);
                 subWrapper.appendChild(subChildren);
                 chapterChildren.appendChild(subWrapper);
             });
 
-            chapterNode.addEventListener('click', (e) => toggleTree(chapterNode));
+            chapterNode.addEventListener('click', () => toggleTree(chapterNode));
             chapterWrapper.appendChild(chapterNode);
             chapterWrapper.appendChild(chapterChildren);
             sidebarContent.appendChild(chapterWrapper);
         });
+    }
+
+    // --- Locked Chapter State ---
+    function showLockedState(chapterTitle) {
+        document.querySelectorAll('.problem-node').forEach(n => n.classList.remove('active'));
+        welcomeState.classList.add('hidden');
+        problemState.classList.add('hidden');
+
+        let lockedState = document.getElementById('locked-state');
+        if (!lockedState) {
+            lockedState = document.createElement('div');
+            lockedState.id = 'locked-state';
+            lockedState.style.cssText = 'display:flex;align-items:center;justify-content:center;height:100%;';
+            lockedState.innerHTML = `
+                <div class="glass-card welcome-card" style="text-align:center;max-width:480px;">
+                    <div style="font-size:4rem;margin-bottom:1rem;">🔒</div>
+                    <h2 style="color:var(--accent-primary);margin-bottom:0.5rem;" id="locked-chapter-name"></h2>
+                    <p style="color:var(--text-secondary);margin-bottom:1.5rem;line-height:1.7;">
+                        Videos for this chapter are being prepared by Senpai.<br>
+                        Enroll in <strong style="color:var(--text-primary);">Chapter 1</strong> first — master the basics, then this chapter unlocks automatically.
+                    </p>
+                    <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:1rem;font-size:0.85rem;color:#f59e0b;">
+                        ⚡ Chapter 1 videos dropping soon — stay tuned!
+                    </div>
+                </div>`;
+            document.querySelector('.content-area').appendChild(lockedState);
+        }
+
+        document.getElementById('locked-chapter-name').innerText = chapterTitle;
+        lockedState.style.display = 'flex';
+
+        if (window.innerWidth <= 900) {
+            sidebar.classList.remove('show');
+        }
     }
 
     // --- Toggle Tree collapse/expand ---
@@ -113,12 +156,13 @@ function initDSA() {
 
     // --- Problem Selection ---
     function selectProblem(clickedNode) {
-        // Remove active class from all
         document.querySelectorAll('.problem-node').forEach(n => n.classList.remove('active'));
-        // Add active to clicked
         clickedNode.classList.add('active');
 
-        // Show problem state, hide welcome
+        // Hide locked state if visible
+        const lockedState = document.getElementById('locked-state');
+        if (lockedState) lockedState.style.display = 'none';
+
         welcomeState.classList.add('hidden');
         problemState.classList.remove('hidden');
 
@@ -280,9 +324,9 @@ function initDSA() {
                     let ioHtml = "";
                     probDetails.io.forEach(ioObj => {
                         ioHtml += `<p><strong>Input:</strong> ${ioObj.input}</p>`;
-                        ioHtml += `<p><strong>Output:</strong> ${ioObj.output}</p>`;
+                        ioHtml += `<pre class="pattern-output">${ioObj.output}</pre>`;
                         if (ioObj.explanation) {
-                            ioHtml += `<p><strong>Explanation:</strong> ${ioObj.explanation}</p>`;
+                            ioHtml += `<p style="margin-top:0.4rem"><strong>Explanation:</strong> ${ioObj.explanation}</p>`;
                         }
                         ioHtml += `<br>`;
                     });

@@ -27,7 +27,7 @@ export function Footer() {
           <div className="space-y-4 md:col-span-2 lg:col-span-1">
             <AnimatedLogo />
             <p className="text-sm text-muted-foreground">
-              Empowering the next generation of tech innovators with cutting-edge skills and knowledge.
+              We help students go from confused to confident — with real skills, real projects, and mentors who've been where you are.
             </p>
           </div>
 

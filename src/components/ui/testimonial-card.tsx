@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Testimonial } from '@/types';
-import { motion } from 'framer-motion'; // Import motion
+import { m } from 'framer-motion';
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <motion.div // Change div to motion.div
+    <m.div // Change div to m.div
       className="bg-black rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-1 p-6 flex flex-col justify-between h-full" // Changed background to black, removed hover:shadow-primary/30
       whileHover={{
         scale: 1.02,
@@ -21,6 +21,6 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
         <p className="font-semibold" style={{ color: '#50FFD1' }}>{testimonial.name}</p>
         <p className="text-sm text-gray-400">{testimonial.company}</p>
       </div>
-    </motion.div>
+    </m.div>
   );
 }

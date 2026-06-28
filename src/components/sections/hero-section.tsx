@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { SectionWrapper } from '@/components/layout/section-wrapper';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export function HeroSection() {
   return (
@@ -20,14 +20,14 @@ export function HeroSection() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="space-y-8 text-center lg:text-left"
         >
           {/* Badge */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -35,13 +35,13 @@ export function HeroSection() {
           >
             <Sparkles className="w-4 h-4" />
             <span>India&apos;s Next-Gen Coding Academy</span>
-          </motion.div>
+          </m.div>
 
           <h1 className="gradient-text font-extrabold tracking-tight leading-[1.1]">
             Unlock Your Coding Potential
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Join CodeYuva and transform your career with our expert-led courses in Data Structures, Algorithms, and Full-Stack Development.
+            Join CodeYuva and transform your career with our expert-led courses in Data Structures & Algorithms, Full-Stack Development, and Machine Learning — built for the future of tech.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button size="lg" asChild className="relative overflow-hidden shadow-lg glow-primary hover:scale-105 transition-all duration-300">
@@ -55,14 +55,14 @@ export function HeroSection() {
             </Button>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-muted-foreground pt-4"
           >
             {["Expert Mentors", "Hands-on Projects", "Career Support"].map((item, i) => (
-              <motion.span
+              <m.span
                 key={item}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -71,12 +71,12 @@ export function HeroSection() {
               >
                 <CheckCircle className="w-4 h-4 text-primary" />
                 {item}
-              </motion.span>
+              </m.span>
             ))}
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: 50, rotateY: -5 }}
           animate={{ opacity: 1, x: 0, rotateY: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -114,7 +114,7 @@ export function HeroSection() {
           {/* Floating glow orbs */}
           <div className="absolute -top-10 -left-10 w-28 h-28 bg-primary/20 rounded-full blur-3xl animate-[pulse-glow_4s_ease-in-out_infinite]" />
           <div className="absolute -bottom-10 -right-10 w-36 h-36 bg-[hsl(265_70%_60%/0.15)] rounded-full blur-3xl animate-[pulse-glow_5s_ease-in-out_infinite_1.5s]" />
-        </motion.div>
+        </m.div>
       </div>
     </SectionWrapper>
   );

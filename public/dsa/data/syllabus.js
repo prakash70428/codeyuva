@@ -21,16 +21,16 @@ window.syllabusData = [
             {
                 subTitle: "1.2 Patterns",
                 problems: [
-                    { id: "1_2_1", title: "Pattern 1" },
-                    { id: "1_2_2", title: "Pattern 2" },
-                    { id: "1_2_3", title: "Pattern 3" },
-                    { id: "1_2_4", title: "Pattern 4" },
-                    { id: "1_2_5", title: "Pattern 5" },
-                    { id: "1_2_6", title: "Pattern 6" },
-                    { id: "1_2_7", title: "Pattern 7" },
-                    { id: "1_2_8", title: "Pattern 8" },
-                    { id: "1_2_9", title: "Pattern 9" },
-                    { id: "1_2_10", title: "Pattern 10" }
+                    { id: "1_2_1", title: "Right-Angle Star Triangle" },
+                    { id: "1_2_2", title: "Hollow Rectangle" },
+                    { id: "1_2_3", title: "Full Diamond" },
+                    { id: "1_2_4", title: "Floyd's Triangle" },
+                    { id: "1_2_5", title: "Pascal's Triangle" },
+                    { id: "1_2_6", title: "Number Pyramid" },
+                    { id: "1_2_7", title: "Butterfly Pattern" },
+                    { id: "1_2_8", title: "Hollow Diamond" },
+                    { id: "1_2_9", title: "Spiral Number Matrix" },
+                    { id: "1_2_10", title: "Swastik Pattern" }
 
                 ]
             },

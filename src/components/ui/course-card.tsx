@@ -23,7 +23,7 @@ export function CourseCard({ course }: CourseCardProps) {
               src={course.image}
               alt={course.title}
               fill // Replaces layout="fill"
-              className="transition-transform duration-500 group-hover:scale-105 object-fill" // object-cover replaces objectFit="cover"
+              className="transition-transform duration-500 group-hover:scale-105 object-cover"
               data-ai-hint={course.dataAiHint}
               sizes="(max-width: 760px) 100vw, (max-width: 1200px) 50vw, 33vw"
               unoptimized
@@ -55,17 +55,14 @@ export function CourseCard({ course }: CourseCardProps) {
         <CardFooter>
           <DialogTrigger asChild>
             <Button className="w-full shadow-md hover:shadow-lg transition-shadow">
-              View Details & Book Demo Session
+              Explore Course
             </Button>
           </DialogTrigger>
         </CardFooter>
       </Card>
 
       <DialogContent className="sm:max-w-[600px] md:max-w-[800px] lg:max-w-[900px] p-0 max-h-[90vh] overflow-y-auto bg-card border-border">
-        <div className="relative w-full aspect-[16/7] md:aspect-[16/6]">
-        <DialogTitle>Course Details</DialogTitle>
-
-          {/* Added DialogDescription for accessibility */}
+        <div className="relative w-full aspect-[16/6] md:aspect-[16/5]">
           <DialogDescription className="sr-only">{course.description}</DialogDescription>
           <Image
             src={course.image}
@@ -90,10 +87,9 @@ export function CourseCard({ course }: CourseCardProps) {
             <>
               {/* Added animate-fadeIn class for a subtle fade-in */}
               <div className="flex items-center text-xl font-semibold text-foreground animate-fadeIn">
-                <span role="img" aria-label="course fee" className="mr-2">💸</span> Course Fee:
-                <span className="line-through text-gray-400 ml-4 mr-2">₹{course.originalFee}</span>
-                {/* Changed text color to #FF9A40 */}
-                <span className="text-[#FF9A40] font-bold">₹{course.discountedFee}</span>
+                <span role="img" aria-label="course fee" className="mr-2">🎓</span> Course Fee:
+                <span className="line-through text-gray-400 ml-4 mr-2">₹{course.originalFee.toLocaleString('en-IN')}</span>
+                <span className="text-[#FF9A40] font-bold">₹{course.discountedFee.toLocaleString('en-IN')}</span>
                 <span className="text-sm text-green-500 ml-2">({course.discountPercentage}% OFF)</span>
                 <span className="text-xs text-yellow-600 ml-4 font-medium">Limited-Time Offer!</span> {/* Added urgency text */}
               </div>
@@ -134,17 +130,23 @@ export function CourseCard({ course }: CourseCardProps) {
 
           <Separator className="my-6" />
 
-          <div className="text-center">
+          <div className="text-center space-y-3">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-5">
+              <p className="text-base font-semibold text-foreground mb-1">🎯 Book a FREE 1-Hour Demo Class</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                Attend a live session with our mentor — see the teaching style, ask questions, and decide if this course is right for you. No pressure, no hidden charges.
+              </p>
               <Button
                 size="lg"
                 className="w-full md:w-auto shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105"
                 onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSecK5qCp2acCYoHP1RxYj0QogPozyVQDAyG8v-ti3fCiFYivg/viewform?usp=header', '_blank')}
               >
-                  Book Demo Session for {course.title}
+                Reserve My Free Demo Spot
               </Button>
-               <p className="text-xs text-muted-foreground mt-3">
-                  Limited seats available. Secure your spot today!
+              <p className="text-xs text-muted-foreground mt-3">
+                ⚡ Limited seats per batch — if you love the session, you can enroll and lock your seat on the spot.
               </p>
+            </div>
           </div>
         </div>
       </DialogContent>

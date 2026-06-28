@@ -7,7 +7,7 @@ import { AnimatedLogo } from '@/components/ui/animated-logo';
 import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -91,6 +91,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </motion.header>
+    </m.header>
   );
 }

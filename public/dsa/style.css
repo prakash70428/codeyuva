@@ -779,6 +779,26 @@ body:not(.dark-theme) .light-icon { display: none; }
         font-size: 0.8rem;
     }
 
+    #pane-code {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    #code-block {
+        font-size: 0.75rem;
+        padding: 1rem 0.75rem;
+        line-height: 1.6;
+        overflow-x: auto;
+        white-space: pre;
+        word-break: normal;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    pre {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     .hc-btn {
         width: 42px;
         height: 42px;
@@ -796,6 +816,29 @@ body:not(.dark-theme) .light-icon { display: none; }
     #rps-player-score, #rps-comp-score {
         font-size: 1.5rem !important;
     }
+}
+
+/* --- Pattern Output Block (LeetCode style) --- */
+.pattern-output {
+    background: #1a1a2e;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-top: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #a8ff78;
+    white-space: pre;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+body:not(.dark-theme) .pattern-output {
+    background: #f0fdf4;
+    color: #166534;
+    border-left-color: #22c55e;
 }
 
 /* --- LeetCode Styling --- */
